@@ -14,7 +14,7 @@ include('process.php')
 	<div class="card-body">
 		<!-- Material form register -->
 <div class="mx-auto d-flex justify-content-center">
-<img src="img/sub_logo.png">
+<img class="filtered" src="img/sub_logo.png">
 </div>	
 <form action="otp.php" method="post" id="signupForm">
 
