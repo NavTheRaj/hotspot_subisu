@@ -3,6 +3,10 @@ $(document).ready(function() {
 				$('#card_signup').show();
 		});
 
+		$("form").submit(function(e){
+				alert('submit intercepted');
+				e.preventDefault(e);
+		});
 
 
 });
