@@ -17,18 +17,6 @@ include('header.html');
 					<input type="text" id="orangeForm-name" class="form-control validate">
 					<label data-error="wrong" data-success="right" for="orangeForm-name">OTP</label>
 				</div>
-			 <!--  <div class="md-form mb-5">
-					<i class="fas fa-user prefix grey-text"></i>
-					<input type="email" id="orangeForm-email" class="form-control validate">
-					<label data-error="wrong" data-success="right" for="orangeForm-email">Username</label>
-				</div>
-
-				<div class="md-form mb-4">
-					<i class="fas fa-lock prefix grey-text"></i>
-					<input type="password" id="orangeForm-pass" class="form-control validate">
-					<label data-error="wrong" data-success="right" for="orangeForm-pass">Password</label>
-				</div>
--->
 			</div>
 			<div class="modal-footer d-flex justify-content-center">
 				<button class="btn purple-gradient">Confirm</button>
