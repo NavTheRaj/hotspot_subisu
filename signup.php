@@ -41,7 +41,7 @@ include('process.php')
 
 			</div>
 			<div class="text-center py-4 mt-3">
-				<button class="btn btn-submit box-shadow" type="submit" name="submit" id="submit_btn">Register</button>
+				<button class="btn btn-submit box-shadow grad-sub" type="submit" name="submit" id="submit_btn">Register</button>
 			</div>
 </div>
 		</form>

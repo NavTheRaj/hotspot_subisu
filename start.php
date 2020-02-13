@@ -12,7 +12,7 @@ include('process.php')
 <!-- First Column -->
 <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
 <!-- col-sm-6 col-md-5 col-lg-3 -->
-<div class="card-register card w-100" id="card_signup">
+<!-- <div class="card-register card w-100" id="card_signup">
 	<!-- Card body -->
 	<div class="card-body">
 
@@ -46,7 +46,7 @@ include('process.php')
 </div>
 <!--card-body -->
 </div>
-<!-- Card register -->
+Card register -->
 </div>
 <!--Second column ends -->
 </div>

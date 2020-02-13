@@ -18,7 +18,7 @@
 }
 
 body,html{
-		overflow:auto !important;
+		overflow:hidden;
 		max-width:100% !important;
 
 
@@ -115,11 +115,10 @@ and (max-device-width : 100%)
 
 .btn-submit{
 border-radius:20rem;
-color:light-black;
+color:#fff;
 opacity:1;
-background-color:white;
 font-weight:bold;
-
+z-index:2;
 
 }
 
@@ -132,6 +131,10 @@ font-weight:bold;
 		color:white;
 }
 
+.grad-sub{
+		background: rgb(45,123,244);
+		background: linear-gradient(209deg, rgba(45,123,244,1) 0%, rgba(144,47,89,1) 76%, rgba(144,47,89,1) 100%, rgba(233,64,138,1) 100%);
+}
 
 #nepal{
 		width:4rem;
@@ -141,4 +144,10 @@ font-weight:bold;
 .modal-img{
 		max-height:100%;
 		max-width:100%;
+}
+
+.btn-row{
+		bottom:0;
+		width:100%;
+		position:absolute;
 }
