@@ -4,8 +4,8 @@ $(document).ready(function() {
 		});
 
 		$("form").submit(function(e){
-				alert('submit intercepted');
-				e.preventDefault(e);
+				// alert('submit intercepted');
+				// e.preventDefault(e);
 		});
 
 

@@ -1,18 +1,17 @@
 <?php
 include('header.html');
 
-$linklogin = ($_POST['link-login']) ? $_POST['link-login'] : $_COOKIE['linklogin'];
-$linkorig = ($_POST['link-orig']) ? $_POST['link-orig'] : $_COOKIE['linkorig'];
-$error = ($_POST['error']) ? $_POST['error'] : $_COOKIE['error'];
-$chapid = ($_POST['chap-id']) ? $_POST['chap-id'] : $_COOKIE['chapid'];
-$chapchallenge = ($_POST['chap-challenge']) ? $_POST['chap-challenge'] : $_COOKIE['chapchallenge'];
-$linkloginonly = ($_POST['link-login-only']) ? $_POST['link-login-only'] : $_COOKIE['linkloginonly'];
-$linkorigesc = ($_POST['link-orig-esc']) ? $_POST['link-orig-esc'] : $_COOKIE['linkorigesc'];
-$macesc = ($_POST['mac-esc']) ? $_POST['mac-esc'] : $_COOKIE['macesc'];
-$mac = ($_POST['mac']) ? $_POST['mac'] : $_COOKIE['mac'];
-$ip = ($_POST['ip']) ? $_POST['ip'] : $_COOKIE['ip'];
-
-
+$linklogin = ($_POST['link-login']) ;
+$linkorig = ($_POST['link-orig']) ;
+$error = ($_POST['error']) ;
+$chapid = ($_POST['chap-id']) ;
+$chapchallenge = ($_POST['chap-challenge']) ;
+$linkloginonly = ($_POST['link-login-only']) ;
+$linkorigesc = ($_POST['link-orig-esc']) ;
+$macesc = ($_POST['mac-esc']) ;
+$mac = ($_POST['mac']) ;
+$ip = ($_POST['ip']) ;
+$vlan = ($_POST['interface-name']) ;
 ?>
 
 <!-- Default form Register -->
@@ -28,43 +27,52 @@ $ip = ($_POST['ip']) ? $_POST['ip'] : $_COOKIE['ip'];
 <div class="mx-auto d-flex justify-content-center">
 <img class="filtered" src="img/sub_logo.png">
 </div>	
-<form action="otp.php" method="post" id="signupForm">
+<form action="include/process.inc.php" method="post" id="signupForm">
 
 <div class="p-4">
 			<!-- Material input text -->
 			<div class="md-form">
 				<i class="fa fa-user prefix white-text"></i>
-				<input type="text" id="name" name="name" class="form-control white-text" required="required">
+				<input type="text" id="name" name="cname" class="form-control white-text" required="required">
 				<label data-error="wrong" id="label" data-success="right" for="name">Name</label>
-
 			</div>
 
 			<!-- Material input email -->
 			<div class="md-form">
 				<i class="fa fa-envelope prefix white-text"></i>
-				<input type="email" id="email" name="email" class="form-control white-text" required="required">
+				<input type="email" id="email" name="cemail" class="form-control white-text" required="required">
 				<label data-error="wrong" id="label" data-success="right" for="email">Email</label>
 
 			</div>
+	
+<div class="md-form">
 
+<input hidden name="linklogin" value="<?php echo $linklogin ?>">
+<input hidden name="linkorig" value="<?php echo $linkorig ?>">
+<input hidden name="error" value="<?php echo $error ?>">
+<input hidden name="chapid" value="<?php echo $chapid ?>">
+<input hidden name="chapchallenge" value="<?php echo $chapchallenge ?>">
+<input hidden name="linkloginonly" value="<?php echo $linkloginonly ?>">
+<input hidden name="linkorigesc" value="<?php echo $linkorigesc ?>">
+<input hidden name="macesc" value="<?php echo $macesc ?>">
+<input hidden name="mac" value="<?php echo $mac ?>">
+<input hidden name="ip" value="<?php echo $ip ?>">
+<input hidden name="vlan" value="<?php echo $vlan ?>">
 
+</div>
 			<!-- Material input password -->
 			<div class="md-form">
 				<i class="phone fa fa-phone prefix white-text"></i>
-				<input type="text" id="phone_number" name="phone_number" class="form-control white-text"  required="required">
+				<input type="text" id="phone_number" name="cphone" class="form-control white-text"  required="required">
 				 <label data-error="wrong" data-success="right" id="label" for="phone_number">Phone</label>
-
 			</div>
 			<div class="text-center py-4 mt-3">
 				<button class="btn btn-submit box-shadow grad-sub" type="submit" name="submit" id="submit_btn">Register</button>
 			</div>
 </div>
 		</form>
-		<!-- Material form register -->
-
 	</div>
 	<!-- Card body -->
-
 </div>
 <!-- Card -->
 </div>
@@ -72,11 +80,5 @@ $ip = ($_POST['ip']) ? $_POST['ip'] : $_COOKIE['ip'];
 </div>
 
 <?php
-
-/*		if(isset($_POST['submit'])){
-				//hide(); //function call to hide the signup form(fxn is in process.php file)
-
-}*/
-
 include('footer.html'); 
 ?>

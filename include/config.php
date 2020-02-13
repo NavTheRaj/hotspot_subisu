@@ -1,12 +1,11 @@
 <?php
-$db_server ='localhost';
-$db_username='root';
-$db_password='password';
-$database='radius';
-$con=mysqli_connect($db_server,$db_username,$db_password,$database);
+$servername = "localhost";
+$dbUsername = "root";
+$dbPassword = "R&D$3rv3r";
+$dbName = 'radius';
+// Create connection
+$con = new mysqli($servername, $dbUsername, $dbPassword,$dbName);
 // Check connection
-if (mysqli_connect_errno())
-{
-echo "Failed to connect database " . mysqli_connect_error();
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-?>
