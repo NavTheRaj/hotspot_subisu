@@ -1,8 +1,20 @@
 <?php
+header("Access-Control-Allow-Origin: http://182.9.64.114");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Access-Control-Allow-Origin,Access-Control-Allow-Methods,Access-Control-Allow-Headers, Authorization,X-Requested-with");
 include ('config.php');
 
+function isEmpty($data){
+		if(empty($data)){
+				header("location: http://hotspot.subisu.net.np");
+		}
+		else{
+				return false;
+		}
+}
 
 $linklogin = ($_POST['linklogin']);
+// $linklogin = 'bbc.com';
 $linkorig = ($_POST['linkorig']);
 $error = ($_POST['error']);
 $chapid = ($_POST['chapid']);
@@ -11,9 +23,10 @@ $linkloginonly = ($_POST['linkloginonly']);
 $linkorigesc = ($_POST['linkorigesc']);
 $macesc = ($_POST['macesc']);
 $mac = ($_POST['mac']);
+// $mac = '54:E1:AD:C1:F7:C4';
 $ip = ($_POST['ip']);
+// $ip = '192.168.20.254';
 $vlan = ($_POST['vlan']);
-
 
 $Name = filter_input(INPUT_POST, 'cname');
 $Email = filter_input(INPUT_POST, 'cemail');
@@ -26,9 +39,12 @@ $errMessage='';
 $errotp='';
 $mobmessage='';
 
+if(empty($linklogin) || empty($ip) || empty($mac)){
+		// header("location: http://hotspot.subisu.net.np");
+		echo false;
+}
 
-if(isset($_POST['submit']))
-{
+else{
 		if (!empty($Phone)) {
 				if(preg_match("/^[0-9]{10}$/", $Phone)) {
 						/* For OTP via SMS */
@@ -55,7 +71,7 @@ if(isset($_POST['submit']))
 						$sql1="call addradcheck ('$otp','Auth-Type',':=','Accept')";
 						$sql2="call addradcheck ('$otp','Expiration',':=','$expirydate')";
 						$sql3="call addradusergroup ('$otp','$package','0')";
-						$sql4="call adduserinfo ('$otp','$Name','info.itahari@subisu.net.np','$Phone','$Address','$date','hotspot.system')";
+						$sql4="call adduserinfo ('$otp','$Name','caninfotech@subisu.net.np','$Phone','$Address','$date','hotspot.system')";
 						$con->query($sql1);
 						$con->query($sql2);
 						$con->query($sql3);
@@ -63,8 +79,9 @@ if(isset($_POST['submit']))
 						#
 						if($con->query($sql)){
 								#              // echo "New Record is inserted sucessfully";
-								echo "inserted";
 								$con ->close();
+								// $token = bin2hex(random_bytes(50));
+								echo "true";
 						}
 						else
 						{
@@ -82,6 +99,7 @@ if(isset($_POST['submit']))
 				#
 		}
 }
+
 
 
 ?>
